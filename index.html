@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Temporizador – San Bartoló</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="frame"></div>
+    <div class="ribbon"></div>
+
+    <main class="content">
+      <!-- Pantalla del temporizador -->
+      <div class="timer" role="application" aria-label="Temporizador">
+        <div id="display" class="timer-display" aria-live="polite">00:00</div>
+
+        <div class="controls" aria-label="Controles del temporizador">
+          <label class="field">
+            <span>Min</span>
+            <input id="minInput" type="number" min="0" value="3" />
+          </label>
+          <label class="field">
+            <span>Seg</span>
+            <input id="secInput" type="number" min="0" max="59" value="0" />
+          </label>
+
+          <button id="startBtn" class="btn">Iniciar</button>
+          <button id="stopBtn" class="btn secondary" disabled>Stop</button>
+          <button id="resetBtn" class="btn danger" disabled>Reiniciar</button>
+        </div>
+        <p class="hint">Atajos: <b>Espacio</b> inicia/pausa • <b>R</b> reinicia.</p>
+      </div>
+
+      <!-- Solo imagen, sin borde -->
+      <img class="logo-img" src="assets/logo-san-bartolo.png" alt="Logo de San Bartoló" />
+    </main>
+  </div>
+
+  <audio id="beep">
+    <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQgAAAAA" type="audio/wav">
+  </audio>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

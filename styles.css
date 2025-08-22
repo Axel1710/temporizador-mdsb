@@ -1,0 +1,42 @@
+/* ====== Estilos base ====== */
+:root{
+  --bg:#f7fcff;
+  --blue:#1d5fa3;
+  --blue-2:#3176b8;
+  --text:#0a0a0a;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.stage{position:relative;min-height:100%;display:flex;align-items:center;justify-content:center;padding:56px}
+
+/* Marco y decoración (se quitaron los triángulos) */
+.frame{position:absolute;inset:18px;border:6px solid var(--blue)}
+.frame::after{content:"";position:absolute;inset:16px;border:4px solid var(--blue-2)}
+.ribbon{position:absolute;inset:34px;border:14px solid rgba(29,95,163,.12)}
+
+/* Contenido */
+.content{position:relative;z-index:2;max-width:1100px;width:100%;display:flex;flex-direction:column;align-items:center;gap:38px}
+
+/* Temporizador: números más delgados */
+.timer{user-select:none;text-align:center}
+.timer-display{font-variant-numeric:tabular-nums;letter-spacing:1px;font-weight:400;line-height:1;font-size:min(13.5vw, 160px)}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center}
+.field{display:flex;align-items:center;gap:8px;background:white;border:2px solid #e5e7eb;border-radius:12px;padding:8px 12px}
+.field span{font-weight:600;color:#111}
+.field input{width:6ch;border:none;outline:none;font-size:18px;text-align:center;font-variant-numeric:tabular-nums}
+.btn{appearance:none;border:none;border-radius:14px;padding:12px 18px;font-weight:700;background:var(--blue);color:#fff;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.1)}
+.btn.secondary{background:#e5e7eb;color:#111}
+.btn.danger{background:#ef4444}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.hint{color:var(--muted);font-size:12px;margin-top:-6px}
+
+/* Solo imagen, sin borde ni padding */
+.logo-img{width:min(70vw, 560px);height:auto;border:none;padding:0;background:transparent;border-radius:0;margin-top:8px}
+
+/* Responsive */
+@media (max-width:640px){
+  .stage{padding:24px}
+  .frame{inset:10px;border-width:5px}
+  .frame::after{inset:10px}
+}
